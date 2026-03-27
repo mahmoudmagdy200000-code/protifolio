@@ -1,58 +1,46 @@
 import React from 'react';
-import { Section } from '../common/Section';
-import { Typography } from '../common/Typography';
-import { Card } from '../common/Card';
+import { Section } from '../layout/Section';
+import { Container } from '../layout/Container';
+import { Typography } from '../layout/Typography';
+import { Card } from '../layout/Card';
 import { portfolioData } from '../../constants/portfolioData';
 
-/**
- * Projects Section showcasing featured works.
- */
-export const ProjectsSection = () => {
-  return (
-    <Section id="projects">
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
-        <div>
-          <Typography variant="small">Case Studies</Typography>
-          <Typography variant="h2" className="mt-2">Featured Projects</Typography>
-        </div>
-        <Typography variant="body" className="max-w-md">
-          A selection of projects where I've applied clean architecture principles and modern technologies to solve complex problems.
-        </Typography>
-      </div>
+export const ProjectsSection: React.FC = () => {
+  const { projects } = portfolioData;
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        {portfolioData.projects.map((project) => (
-          <Card key={project.name} className="flex flex-col group">
-            <div className="h-64 bg-slate-100 flex items-center justify-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-primary-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-              <Typography variant="h3" className="text-slate-300 pointer-events-none uppercase tracking-widest text-3xl font-black">
-                {project.name.split(' ')[0]}
-              </Typography>
-            </div>
-            <div className="p-8">
-              <Typography variant="h3" className="mb-3">{project.name}</Typography>
-              <Typography variant="body" className="mb-6">
-                {project.description}
-              </Typography>
-              {project.link ? (
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-primary-600 font-semibold inline-flex items-center hover:text-primary-700 transition-colors">
-                  Visit Project
-                  <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
-              ) : (
-                <button className="text-primary-600 font-semibold inline-flex items-center hover:text-primary-700 transition-colors">
-                  View Project Details
-                  <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </button>
-              )}
-            </div>
-          </Card>
-        ))}
-      </div>
+  return (
+    <Section surfaceLevel="base" id="projects">
+      <Container>
+        <div className="flex flex-col gap-16">
+          <div className="flex flex-col gap-4">
+            <Typography variant="label" className="text-tertiary">Featured Work</Typography>
+            <Typography variant="display" className="text-3xl md:text-5xl">Architecture & Implementation</Typography>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {projects.map((project) => (
+               <Card key={project.id} glass={true} className="flex flex-col min-h-[320px] justify-between group">
+                  <div className="flex flex-col gap-6">
+                    <Typography variant="title" className="text-2xl pt-2 px-2 text-primary group-hover:text-primary-container transition-colors duration-premium">
+                      {project.title}
+                    </Typography>
+                    
+                    <Typography variant="body" className="px-2">
+                       {project.description}
+                    </Typography>
+                  </div>
+                  
+                  <div className="px-2 pb-2">
+                    {/* Tertiary button style: text only with subtle electric link effect */}
+                    <button className="text-tertiary font-medium uppercase tracking-widest text-sm hover:text-primary transition-colors duration-premium shadow-none">
+                       View Case Study &rarr;
+                    </button>
+                  </div>
+               </Card>
+            ))}
+          </div>
+        </div>
+      </Container>
     </Section>
   );
 };

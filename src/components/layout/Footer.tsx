@@ -11,7 +11,7 @@ export const Footer = () => {
     <footer className="py-12 border-t border-slate-200 bg-white">
       <Container className="text-center">
         <Typography variant="body" className="text-slate-500 text-sm">
-          © {new Date().getFullYear()} {portfolioData.profile.name}. Built with React, TypeScript & Clean Architecture.
+          © {new Date().getFullYear()} {portfolioData.hero.name}. Built with React, TypeScript & Clean Architecture.
         </Typography>
       </Container>
     </footer>

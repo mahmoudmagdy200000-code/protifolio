@@ -1,49 +1,27 @@
-/**
- * Represents the personal profile information.
- */
-export interface Profile {
-  readonly name: string;
-  readonly headline: string;
-  readonly summary: string;
+export interface HeroData {
+  name: string;
+  headline: string;
+  summary: string;
 }
 
-/**
- * Represents a single skill.
- */
-export interface Skill {
-  readonly name: string;
-}
-
-/**
- * Represents a category of skills.
- */
 export interface SkillCategory {
-  readonly title: string;
-  readonly skills: readonly string[];
+  title: string;
+  skills: string[];
 }
 
-/**
- * Represents a featured project.
- */
-export interface Project {
-  readonly name: string;
-  readonly description: string;
-  readonly link?: string;
+export interface ProjectData {
+  id: string;
+  title: string;
+  description: string;
 }
 
-/**
- * Represents the about me section.
- */
-export interface About {
-  readonly interests: string;
+export interface AboutData {
+  interests: string;
 }
 
-/**
- * Root interface for the entire portfolio data store.
- */
 export interface PortfolioData {
-  readonly profile: Profile;
-  readonly skills: readonly SkillCategory[];
-  readonly projects: readonly Project[];
-  readonly about: About;
+  hero: HeroData;
+  skills: SkillCategory[];
+  projects: ProjectData[];
+  about: AboutData;
 }
