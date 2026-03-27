@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
-import { useFrame, useThree } from '@react-three/fiber';
-import { Text, Html } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
+import { Html } from '@react-three/drei';
 import * as THREE from 'three';
 
 // Define the architecture layers (Clean Architecture logic separated from UI rendering)
@@ -36,7 +36,7 @@ export default function CleanArchitectureModel() {
 
   return (
     <group ref={groupRef}>
-      {architectureLayers.map((layer, index) => {
+      {architectureLayers.map((layer) => {
         const isHovered = hoveredLayer === layer.id;
         const scale = isHovered ? 1.05 : 1;
         const expandedY = isHovered ? layer.yOffset * 1.2 : layer.yOffset; // Exploded view expansion
@@ -67,21 +67,20 @@ export default function CleanArchitectureModel() {
               />
             </mesh>
             
-            {/* Layer Label inside the 3D space */}
-            <Text
-              position={[0, 0, 2.2]}
-              fontSize={0.3}
-              color={isHovered ? '#ffffff' : '#d8e3fb'}
-              anchorX="center"
-              anchorY="middle"
-            >
-              {layer.name}
-            </Text>
+            {/* Layer Label using HTML to avoid Vite production minification crashes from Troika Text */}
+            <Html position={[0, 0, 2.2]} center transform>
+              <div 
+                className="font-bold text-sm select-none" 
+                style={{ color: isHovered ? '#ffffff' : '#d8e3fb', transition: 'color 0.3s ease' }}
+              >
+                {layer.name}
+              </div>
+            </Html>
 
             {/* Html Tooltip for description */}
             {isHovered && (
-              <Html position={[2, 0, 0]} center>
-                <div className="bg-surface-container-high/80 backdrop-blur-md p-4 rounded-xl ghost-border text-on-surface w-48 shadow-ambient transition-all duration-300 transform -translate-y-1/2">
+              <Html position={[2.5, 0, 0]} center>
+                <div className="bg-surface-container-high/80 backdrop-blur-md p-4 rounded-xl ghost-border text-on-surface w-48 shadow-ambient transition-all duration-300 transform -translate-y-1/2 pointer-events-none">
                   <h4 className="text-primary font-bold text-sm mb-1">{layer.name}</h4>
                   <p className="text-xs text-on-surface-variant font-medium leading-relaxed">{layer.description}</p>
                 </div>
