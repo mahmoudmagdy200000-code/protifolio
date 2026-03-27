@@ -32,9 +32,20 @@ export const ProjectsSection: React.FC = () => {
                   
                   <div className="px-2 pb-2">
                     {/* Tertiary button style: text only with subtle electric link effect */}
-                    <button className="text-tertiary font-medium uppercase tracking-widest text-sm hover:text-primary transition-colors duration-premium shadow-none">
-                       View Case Study &rarr;
-                    </button>
+                    {project.url ? (
+                      <a 
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-tertiary font-medium uppercase tracking-widest text-sm hover:text-primary transition-colors duration-premium shadow-none inline-block relative z-20"
+                      >
+                         View Live App &rarr;
+                      </a>
+                    ) : (
+                      <button className="text-tertiary font-medium uppercase tracking-widest text-sm hover:text-primary transition-colors duration-premium shadow-none relative z-20">
+                         View Case Study &rarr;
+                      </button>
+                    )}
                   </div>
                </Card>
             ))}

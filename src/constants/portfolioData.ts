@@ -28,12 +28,14 @@ export const portfolioData: PortfolioData = {
     {
       id: "nexa-pms",
       title: "Nexa PMS",
-      description: "A comprehensive, scalable hotel management system."
+      description: "A comprehensive, scalable hotel management system.",
+      url: "https://hotel-dun-ten.vercel.app/"
     },
     {
       id: "ras-sedr",
       title: "Ras Sedr Rental",
-      description: "A complete booking platform and website for renting chalets in Ras Sedr."
+      description: "A complete booking platform and website for renting chalets in Ras Sedr.",
+      url: "https://front-peach-nine.vercel.app/"
     }
   ],
   about: {
