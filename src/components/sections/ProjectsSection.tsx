@@ -13,7 +13,7 @@ export const ProjectsSection: React.FC = () => {
       <Container>
         <div className="flex flex-col gap-16">
           <div className="flex flex-col gap-4">
-            <Typography variant="label" className="text-tertiary">Featured Work</Typography>
+            <Typography variant="label" className="text-tertiary">Architecture Featured Work</Typography>
             <Typography variant="display" className="text-3xl md:text-5xl">Architecture & Implementation</Typography>
           </div>
 

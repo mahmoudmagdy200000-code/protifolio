@@ -29,8 +29,8 @@ export const Header = () => {
       isScrolled ? 'bg-white/80 backdrop-blur-md border-b border-slate-200 py-4 shadow-sm' : 'bg-transparent py-6'
     }`}>
       <Container className="flex items-center justify-between">
-        <Typography variant="h3" className="text-primary-600 font-black tracking-tighter">
-          PORTFOLIO.
+        <Typography variant="h3" className="text-on-surface font-black tracking-tighter">
+          MAHMOUD<span className="text-[#00daf3]">.</span>DEV
         </Typography>
         
         <nav className="hidden md:flex items-center gap-8">

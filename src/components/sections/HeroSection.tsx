@@ -83,14 +83,17 @@ export const HeroSection: React.FC = () => {
             
             <motion.div variants={itemVariants} className="flex flex-wrap gap-6 mt-6">
               {/* Solid Cyan Primary CTA with Dark Navy Text */}
-              <button className="px-8 py-4 rounded-xl bg-[#00daf3] text-[#0A192F] font-bold transition-all duration-300 hover:bg-[#00e5ff] hover:-translate-y-1 shadow-[0_8px_20px_rgba(0,218,243,0.25)] hover:shadow-[0_12px_25px_rgba(0,218,243,0.4)] active:scale-95">
+              <a href="#projects" onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+              }} className="inline-block px-8 py-4 rounded-xl bg-[#00daf3] text-[#0A192F] font-bold transition-all duration-300 hover:bg-[#00e5ff] hover:-translate-y-1 shadow-[0_8px_20px_rgba(0,218,243,0.25)] hover:shadow-[0_12px_25px_rgba(0,218,243,0.4)] active:scale-95 text-center">
                 View Projects
-              </button>
+              </a>
 
-              {/* Outlined Secondary Button */}
-              <button className="px-8 py-4 rounded-xl border-2 border-[#1A2D40] bg-transparent text-on-surface hover:bg-[#1A2D40]/50 transition-all duration-300 hover:-translate-y-1 active:scale-95">
+              {/* Outlined Secondary Button - Phone Link */}
+              <a href="tel:01096619414" className="inline-block px-8 py-4 rounded-xl border-2 border-[#1A2D40] bg-transparent text-on-surface hover:bg-[#1A2D40]/50 transition-all duration-300 hover:-translate-y-1 active:scale-95 text-center">
                 Contact Me
-              </button>
+              </a>
             </motion.div>
           </motion.div>
           

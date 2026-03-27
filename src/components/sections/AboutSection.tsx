@@ -103,7 +103,7 @@ export const AboutSection: React.FC = () => {
             
             {/* Left Column: Text & Waveform */}
             <div className="flex flex-col gap-10 text-left items-start">
-              <Typography variant="label" className="text-tertiary">Personal Insight</Typography>
+              <Typography variant="label" className="text-tertiary">About Me</Typography>
               
               <Typography variant="title" className="text-3xl md:text-4xl text-balance">
                 "Architecture is not just about building software; it's about defining the space where code, logic, and user experience converge."
