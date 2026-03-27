@@ -126,12 +126,12 @@ export const AboutSection: React.FC = () => {
 
             {/* Right Column: Profile Image */}
             <div className="relative flex justify-center lg:justify-end">
-               {/* Glassmorphism Frame around Image */}
-               <div className="relative w-full max-w-[360px] aspect-[4/5] rounded-[2rem] p-4 glass-effect shadow-ambient group hover:-translate-y-2 transition-transform duration-premium">
+               {/* Container with new Dark Blue Drop Shadow and transition target */}
+               <div className="relative w-full max-w-[360px] aspect-[4/5] rounded-[2rem] p-4 glass-effect shadow-[0_15px_40px_rgba(10,25,47,0.8)] group hover:-translate-y-2 transition-transform duration-500 ease-out cursor-pointer">
                   <img 
                     src={profileImg} 
                     alt={portfolioData.hero.name} 
-                    className="w-full h-full object-cover rounded-[1.5rem] filter grayscale group-hover:grayscale-0 transition-all duration-700"
+                    className="w-full h-full object-cover rounded-[1.5rem] grayscale-[100%] transition-[filter] duration-500 ease group-hover:grayscale-0"
                   />
                   {/* Decorative ambient glow that reveals on hover */}
                   <div className="absolute -inset-4 bg-tertiary/20 blur-[80px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />

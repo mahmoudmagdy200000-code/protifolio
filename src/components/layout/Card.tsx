@@ -62,7 +62,7 @@ export const Card: React.FC<CardProps> = ({
       className={`rounded-2xl relative group cursor-pointer ${className}`.trim()}
     >
       <div 
-        className={`w-full h-full p-6 md:p-8 rounded-2xl ${baseClasses} overflow-hidden`}
+        className={`w-full h-full p-7 md:p-9 rounded-2xl ${baseClasses} overflow-hidden`}
         style={{ transform: 'translateZ(30px)' }}
       >
         {/* Pulsating Inner Glow on Hover */}

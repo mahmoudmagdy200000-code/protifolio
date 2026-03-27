@@ -82,14 +82,13 @@ export const HeroSection: React.FC = () => {
             </motion.div>
             
             <motion.div variants={itemVariants} className="flex flex-wrap gap-6 mt-6">
-              {/* Glassmorphism CTA with Pulsating Glow */}
-              <button className="relative px-8 py-4 rounded-xl bg-gradient-to-r from-primary/90 to-primary-container/90 text-surface-container-lowest font-bold overflow-hidden group shadow-[0_0_20px_rgba(0,218,243,0.3)] transition-all duration-premium hover:shadow-[0_0_40px_rgba(0,218,243,0.5)] active:scale-95">
-                <span className="relative z-10">View Projects</span>
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-white/30 blur-md rounded-xl opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-500" />
+              {/* Solid Cyan Primary CTA with Dark Navy Text */}
+              <button className="px-8 py-4 rounded-xl bg-[#00daf3] text-[#0A192F] font-bold transition-all duration-300 hover:bg-[#00e5ff] hover:-translate-y-1 shadow-[0_8px_20px_rgba(0,218,243,0.25)] hover:shadow-[0_12px_25px_rgba(0,218,243,0.4)] active:scale-95">
+                View Projects
               </button>
 
-              <button className="px-8 py-4 rounded-xl bg-surface-container-high/40 ghost-border text-on-surface hover:bg-surface-container-high transition-colors duration-premium active:scale-95">
+              {/* Outlined Secondary Button */}
+              <button className="px-8 py-4 rounded-xl border-2 border-[#1A2D40] bg-transparent text-on-surface hover:bg-[#1A2D40]/50 transition-all duration-300 hover:-translate-y-1 active:scale-95">
                 Contact Me
               </button>
             </motion.div>

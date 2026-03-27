@@ -25,7 +25,7 @@ export const SkillsSection: React.FC = () => {
                   {category.skills.map((skill, skillIndex) => (
                     <span 
                       key={skillIndex} 
-                      className="inline-flex items-center px-4 py-2 rounded-full bg-surface-container-highest text-sm uppercase tracking-widest text-on-surface-variant font-medium ghost-border"
+                      className="inline-flex items-center px-4 py-2 rounded-full bg-[#1A2D40] border border-[#00daf3]/20 text-sm uppercase tracking-widest text-[#E2E8F0] font-medium transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,218,243,0.3)] hover:-translate-y-0.5"
                     >
                       {skill}
                     </span>
